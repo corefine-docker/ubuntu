@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER Fe
-WORKDIR /root
+WORKDIR /data
 RUN apt-get update
 RUN apt-get install openssh-server -y
 RUN echo "root:root" | chpasswd 

@@ -1,8 +1,9 @@
 FROM ubuntu:16.04
 MAINTAINER Fe
 WORKDIR /data
+COPY sources.list /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get install -y openssh-server sudo wget lrzsz telnet software-properties-common python-software-properties
+RUN apt-get install -y openssh-server sudo wget lrzsz telnet software-properties-common python-software-properties tzdata vim zip unzip net-tools
 RUN echo "root:root" | chpasswd
 RUN mkdir /var/run/sshd
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config

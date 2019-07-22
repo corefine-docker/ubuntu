@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:18.10
 MAINTAINER Fe
 WORKDIR /data
 COPY sources.list /etc/apt/sources.list

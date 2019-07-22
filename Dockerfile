@@ -10,8 +10,7 @@ RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN \cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN mkdir /root/.ssh
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get clean && rm -rf /tmp/* /var/tmp/*
 EXPOSE 22
 EXPOSE 8080
 CMD ["/usr/sbin/sshd", "-D"]
